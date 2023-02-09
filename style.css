@@ -1,0 +1,17 @@
+body {
+    background-color: #1d2d3c;
+}
+
+header {
+    background-color: #06131f;
+    height: 100px;
+}
+
+header i {
+    color: #18d860;
+    font-size: 4rem;
+}
+
+.row .col-4 {
+    background-color: #112030;
+}
