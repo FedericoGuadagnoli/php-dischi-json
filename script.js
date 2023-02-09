@@ -3,6 +3,8 @@ const apiUri = 'http://localhost/php-dischi-json/api.php';
 const app = createApp({
     data() {
         return {
+            showDetail: false,
+            selectedSong: null,
             songs: []
         }
     },

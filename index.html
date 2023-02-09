@@ -41,7 +41,8 @@
         <main>
             <div class="container p-5 text-light">
                 <div class="row d-flex flex-wrap g-5 gap-5 p-5 justify-content-center">
-                    <div v-for="song in songs" :key="song.year" class="col-4">
+                    <div v-for="song in songs" :key="song.year" @click="showDetail = true, selectedSong = song"
+                        class="col-4">
                         <figure class="w-100 pt-3">
                             <img :src="song.poster" :alt="song.title" class="img-fluid">
                         </figure>
@@ -52,6 +53,15 @@
                         </figcaption>
                     </div>
                 </div>
+            </div>
+            <div class="detail-box" v-if="showDetail" @click="showDetail = false">
+                <div class="detail-content">
+                    <img :src="selectedSong.poster" :alt="selectedSong.title" class="img-fluid">
+                    <h3 class="text-center">{{ selectedSong.title }}</h3>
+                    <author> {{ selectedSong.author }}</author>
+                    <date> {{ selectedSong.year }} </date>
+                </div>
+                <i class="fa fa-times close-icon text-light" @click="showDetail = false"></i>
             </div>
         </main>
     </div>

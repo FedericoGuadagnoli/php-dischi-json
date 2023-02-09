@@ -16,3 +16,30 @@ header i {
     background-color: #112030;
     flex-basis: calc(100% / 3 - 3rem);
 }
+
+.detail-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(17, 32, 49, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-content {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.close-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
