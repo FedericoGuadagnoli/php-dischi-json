@@ -40,15 +40,15 @@
         </header>
         <main>
             <div class="container p-5 text-light">
-                <div class="row d-flex flex-wrap">
+                <div class="row d-flex flex-wrap g-5 gap-5 p-5 justify-content-center">
                     <div v-for="song in songs" :key="song.year" class="col-4">
-                        <figure>
-                            <img :src="song.poster" :alt="song.title">
+                        <figure class="w-100 pt-3">
+                            <img :src="song.poster" :alt="song.title" class="img-fluid">
                         </figure>
-                        <figcaption>
-                            <h3>{{ song.title }}</h3>
+                        <figcaption class="d-flex flex-column align-items-center gap-2 pb-3">
+                            <h3 class="text-center">{{ song.title }}</h3>
                             <author> {{ song.author }}</author>
-                            <date> {{ song.date }} </date>
+                            <date> {{ song.year }} </date>
                         </figcaption>
                     </div>
                 </div>
