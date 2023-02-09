@@ -25,27 +25,36 @@
         crossorigin='anonymous'></script>
 
     <!-- VueJS -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.js'
-        integrity='sha512-2zwx0mkoR2cxZY0humPK79YhJYgoX5lT+WNqkgTcV7qhVm3+msjlmOgoXnN1cW2r9qqbZez3XhnLZsyW3k8Wtg=='
-        crossorigin='anonymous'></script>
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
 
     <!-- JS -->
     <script defer src="script.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="container h-100 d-flex align-items-center">
-            <i class="fa-brands fa-spotify"></i>
-        </div>
-    </header>
-    <main>
-        <div class="container p-5 text-light">
-            <div class="row d-flex flex-wrap">
-                <div class="col-4">ciao</div>
+    <div id="app">
+        <header>
+            <div class="container h-100 d-flex align-items-center">
+                <i class="fa-brands fa-spotify"></i>
             </div>
-        </div>
-    </main>
+        </header>
+        <main>
+            <div class="container p-5 text-light">
+                <div class="row d-flex flex-wrap">
+                    <div v-for="song in songs" :key="song.year" class="col-4">
+                        <figure>
+                            <img :src="song.poster" :alt="song.title">
+                        </figure>
+                        <figcaption>
+                            <h3>{{ song.title }}</h3>
+                            <author> {{ song.author }}</author>
+                            <date> {{ song.date }} </date>
+                        </figcaption>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
 
 </html>
